@@ -1,0 +1,99 @@
+This is a summarized guide to parameters that control AI behaviour:
+
+---
+
+### **Core Parameters**
+
+1. **Temperature (0–1)**  
+   - **Purpose:** Controls creativity and randomness.  
+   - **Low Values (e.g., 0.2):** Focused, deterministic outputs.  
+   - **High Values (e.g., 0.8):** More varied and imaginative outputs.  
+   - **Example:**  
+     - **Prompt:** "Describe a magical forest."  
+     - **Temp 0.2:** "The forest is dense and green, with tall trees and sunlight filtering through the leaves."  
+     - **Temp 0.8:** "The forest glows with bioluminescent trees, their leaves shimmering in shades of emerald and gold."
+
+2. **Diversity Penalty (0–2)**  
+   - **Purpose:** Encourages varied vocabulary and phrasing.  
+   - **Higher Values:** Discourages repetition, promotes diversity.  
+   - **Example:**  
+     - **Prompt:** "Write a paragraph about the ocean."  
+     - **Penalty 0.5:** "The ocean is vast. The ocean is blue. The ocean is calming."  
+     - **Penalty 1.5:** "The expansive ocean sparkles under the sun, its azure waves rolling gently toward the shore."
+
+3. **Max Tokens (Positive Integer)**  
+   - **Purpose:** Limits the length of the output.  
+   - **Example:**  
+     - **Max Tokens 20:** "A sunset paints the sky with hues of orange and red."  
+     - **Max Tokens 50:** "A sunset paints the sky with hues of orange, red, and purple, casting a warm glow over the tranquil sea."
+
+4. **Top_p (0–1)**  
+   - **Purpose:** Controls the breadth of token sampling.  
+   - **Low Values (e.g., 0.3):** Focuses on the most likely tokens.  
+   - **High Values (e.g., 0.9):** Includes less likely but creative tokens.  
+   - **Example:**  
+     - **Prompt:** "Describe a bustling marketplace."  
+     - **Top_p 0.3:** "The market is busy, with vendors selling fruits and vegetables."  
+     - **Top_p 0.9:** "The vibrant marketplace buzzes with life, where exotic spices mingle with the chatter of merchants hawking their wares."
+
+5. **Frequency Penalty (-2 to 2)**  
+   - **Purpose:** Penalizes frequent words to promote rarity.  
+   - **Positive Values:** Encourage uncommon vocabulary.  
+   - **Example:**  
+     - **Penalty 0:** "The cat sat on the mat. The mat was soft."  
+     - **Penalty 1.5:** "The feline lounged upon the carpet, its texture plush beneath her paws."
+
+6. **Presence Penalty (-2 to 2)**  
+   - **Purpose:** Penalizes repeated phrases from the input.  
+   - **Positive Values:** Discourage repetition.  
+   - **Example:**  
+     - **Prompt:** "Talk about space exploration."  
+     - **Penalty -1:** "Space exploration is exciting. Space exploration has advanced technology."  
+     - **Penalty 1:** "Exploring the cosmos has pushed technological frontiers and inspired humanity’s imagination."
+
+---
+
+### **Advanced Parameters**
+
+1. **Best_of (Positive Integer)**  
+   - **Purpose:** Generates multiple completions and selects the best one.  
+   - **Example:**  
+     - **Best_of 3:** Generates three variations of an essay on AI and selects the most coherent or creative one.
+
+2. **N (Positive Integer)**  
+   - **Purpose:** Returns multiple completions for the user to choose from.  
+   - **Example:**  
+     - **N 2:** Provides two different endings for a story.
+
+3. **Echo (Boolean)**  
+   - **Purpose:** Determines whether input text is echoed in the output.  
+   - **Example:**  
+     - **Echo True:** "Prompt: What is AI? Output: What is AI? AI is the simulation of human intelligence in machines."  
+     - **Echo False:** "AI is the simulation of human intelligence in machines."
+
+4. **Stop Sequences (List of Strings)**  
+   - **Purpose:** Stops generation when a specific string is encountered.  
+   - **Example:**  
+     - **Stop Sequence ["END"]:** "The story continues until the END."
+
+5. **User Attributes (Key-Value Pairs)**  
+   - **Purpose:** Tailors responses to user-specific preferences.  
+   - **Example:**  
+     - **User Attributes:** {"age": "25", "interests": ["science fiction"]}  
+     - **Output:** "As a science fiction enthusiast, you might enjoy *Dune* or *The Expanse*."
+
+6. **System Level Settings (Dictionary)**  
+   - **Purpose:** Adjusts processing and memory for complex tasks.  
+   - **Example:**  
+     - **Settings:** {"memory": "high", "processing_speed": "fast"}  
+     - **Output:** Optimized for detailed analyses, such as generating a research paper outline.
+
+---
+
+### **How These Parameters Interact**
+
+- **Creative Writing:** Use **high temperature**, **top_p**, and **diversity penalty** to foster originality.  
+- **Technical or Factual Outputs:** Lower **temperature**, increase **frequency penalty**, and set a **stop sequence** for concise, accurate results.  
+- **Custom User Experience:** Combine **user attributes** and **best_of** for personalized and high-quality responses.
+
+by MYKXYZ / NEWKXYZ
